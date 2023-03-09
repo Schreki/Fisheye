@@ -2,55 +2,82 @@
 const url = new URL(document.location);
 const searchParams = url.searchParams;
 idPhotographe = searchParams.get("id");
-console.log(idPhotographe);
 
-/*
-function photographerPageFactory(data) {
-  const { idPhotographe, name, portrait, city, tagline, price } = data;
 
-  const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
+fetchData("data/photographers.json").then((photographersInfos)=>{
 
-  function getPhotographerHeaderDOM() {
-    const article = document.createElement("article");
-    console.log(article);
-    const img = document.createElement("img");
-    img.setAttribute("src", picture);
-    img.classList.add("portrait");
-    const h2 = document.createElement("h2");
+      const photographerInfos = getPhotographerInfos(idPhotographe, photographersInfos.photographers);
 
-    h2.textContent = name;
-    h2.classList.add("name");
+      const photographerMedias = getPhotographerMedias(idPhotographe, photographersInfos.media);
 
-    const a = document.createElement("a");
-    a.setAttribute("href", lienPhotographe);
+      displayPhotographerInfos(photographerInfos);
 
-    const h3 = document.createElement("h3");
-    h3.textContent = city;
-    h3.classList.add("location");
-    const tag = document.createElement("p");
-    tag.classList.add("tagline");
-    tag.textContent = tagline;
-    const prix = document.createElement("p");
-    prix.classList.add("price");
-    prix.textContent = price + "€ /jour";
-    article.appendChild(img);
-    a.appendChild(img);
-    a.appendChild(h2);
-    article.appendChild(a);
-    article.appendChild(h3);
-    article.appendChild(tag);
-    article.appendChild(prix);
+      displayPhotograherMedias(photographerMedias);
 
-    return article;
-  }
-  return {
-    idPhotographe,
-    name,
-    picture,
-    city,
-    tagline,
-    price,
-    getPhotographerHeaderDOM,
-  };
+
+});
+
+// Fonction qui recupere les informations d'un photographe
+
+function getPhotographerInfos(photographerId, arrayOfPhotographers){
+
+     return arrayOfPhotographers.find((photographerInfos)=>{
+
+          return Number(photographerId) === Number(photographerInfos.id);
+
+     });
+   
 }
-*/
+
+// Fonction qui recupere les medias d'un photographe
+
+function getPhotographerMedias(photographerId, arrayOfPhotographersMedias){
+
+     return arrayOfPhotographersMedias.filter((photographerMedias)=>{
+
+           return Number(photographerId) === Number(photographerMedias.photographerId);
+
+     })
+
+}
+
+
+// Cette fonction affiche les informations d'un photographe
+
+function displayPhotographerInfos(photographerInfos){
+
+     const html = `
+     
+          <article class="photographer-header-item">
+          
+          
+          </article>
+
+          <article class="photographer-header-item">
+          
+          <button class="contact_button photographer-header-item" onclick="displayModal()">Contactez-moi</button>
+          
+          </article>
+
+          <article class="photographer-header-item">
+          
+              <img src="assets/photographers/Photographers ID Photos/${photographerInfos.portrait}" alt="${photographerInfos.name}" />
+
+          </article>
+     
+     `;
+
+     document.querySelector(".photograph-header").innerHTML = html;
+
+
+}
+
+
+// Cette fontion affiche les medias d'un photographe
+
+function displayPhotograherMedias(arrayOfMedias){
+
+
+
+}
+
