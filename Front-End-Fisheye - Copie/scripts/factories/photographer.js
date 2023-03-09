@@ -2,7 +2,7 @@ function photographerFactory(data) {
   const { id, name, portrait, city, tagline, price } = data;
 
   const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
-  const lienPhotographe = `http://127.0.0.1:5500/photographer.html?id=${id}`;
+  const lienPhotographe = `photographer.html?id=${id}`;
 
   function getUserCardDOM() {
     const article = document.createElement("article");
