@@ -67,17 +67,16 @@ function displayPhotographerInfos(photographerInfos) {
 }
 
 function displayPhotograherMedias(arrayOfMedias) {
-  //console.log(images.image);
 
-  // console.log(arrayOfMedias);
-  for (let media of arrayOfMedias) {
-    //console.log(media.image);
-    const image = new MediaFactory(media, "image");
-    const video = new MediaFactory(media, "video");
+     let mediasHTML = "";
+    
+     arrayOfMedias.forEach((media)=>{
 
-    image.getimage();
-    //  console.log(image.getimage());
-    video.getvideo();
-    console.log(video.getvideo());
-  }
+          mediasHTML += `
+          
+               ${mediaFactory(media)}
+          `;
+     });
+
+     document.querySelector(".photograph-media").innerHTML =  mediasHTML;
 }

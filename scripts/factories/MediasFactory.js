@@ -1,14 +1,27 @@
-class MediaFactory {
-  constructor(data, type) {
-    // Si le type correspond à image, alors retourne moi une image
-    if (type === "image") {
-      return new Image(data);
-      // Sinon retourne moi une video
-    } else if (type === "video") {
-      return new Video(data);
-      // Une bonne pratique est de throw une erreur si le format n'est pas reconnu
-    } else {
-      throw "Unknown type format";
+function mediaFactory(media){
+
+    if(media.image !== undefined){
+
+        return createImage(media.image, media.title);
+
     }
-  }
+
+    return createVideo(media.video, media.title);
+
+}
+
+function createImage(imgSrc, imgAlt){
+
+     return `<img src="assets/medias/${imgSrc}" alt="${imgAlt}"  />`;
+
+}
+
+function createVideo(videoSrc, videoAlt){
+
+    return `<video>
+              <source src="assets/medias/${videoSrc}" type="video/mp4" alt="${videoAlt}"></source>
+            </video>
+    
+            `;
+
 }
