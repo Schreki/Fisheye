@@ -106,3 +106,90 @@ form input {
   left: 30px;
   top: 75px;
 }
+
+.photograph-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 26rem);
+  justify-content: space-between;
+  margin: 0 100px;
+  padding: 2em 0;
+}
+
+.photograph-media-item {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 400px;
+  padding: 1em 0;
+}
+
+.photograph-media-item img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.photograph-media-item video {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.media-card-title {
+  max-width: 80%;
+  font-weight: 400;
+  color: #911c1c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.media-like-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.media-like-count {
+  font-weight: 400;
+  font-size: 25px;
+  margin-right: 0.2em;
+  color: #911c1c;
+}
+.media-like-button {
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  color: #911c1c;
+  cursor: pointer;
+}
+.media-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+.footer {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  height: 6rem;
+  padding: 1em;
+  background: #db8876;
+  color: #000000;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.footer-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.footer-likes {
+  margin-right: 0.5em;
+}
