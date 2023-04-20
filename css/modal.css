@@ -1,0 +1,217 @@
+.modal {
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
+}
+
+.modal header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal header img {
+  cursor: pointer;
+}
+
+.modal header h2 {
+  font-size: 50px;
+  font-weight: normal;
+  color: #000;
+  margin: 10px;
+}
+.namePhoto h2{
+  font-size: 50px;
+  font-weight: normal;
+  color: #000;
+  margin: 10px;
+}
+.namePhoto p {
+  margin: 0;
+}
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  color: #312e2e;
+  font-size: 36px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+
+form input {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.modal-btn {
+  font-size: 145%;
+  background: #fe142f;
+  display: flex;
+  margin: auto;
+  padding: 2em;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.modal-btn:hover {
+  background: #3876ac;
+}
+
+
+/* Modal form */
+
+.button {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  padding: 1.1rem;
+  width: 17rem;
+  height: 5rem;
+  border: none;
+  background-color: #901C1D;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+
+.smFont {
+  font-size: 16px;
+}
+
+.bground {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.content {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 700px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #db8876;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.modal-body {
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+
+label {
+  font-family: var(--font-default);
+  font-size: 17px;
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 11px;
+}
+input {
+  padding: 8px;
+  border: 0.8px solid #ccc;
+  outline: none;
+}
+.text-control {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 48px;
+}
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid #e54858;
+}
+
+
+/* custom select end */
+.text-label {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+#message input{
+  height: 150px;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*Validation du formulaire*/
+.validationForm {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  height: 65vh;
+}
+.validationForm #validMessage {
+  margin: auto;
+}
+.text-danger,
+.text-succes {
+  font-size: 12px;
+  margin-top: 7px;
+}
+.text-danger {
+  color: #fe142f;
+}
+.text-succes {
+  color: #279e7a;
+}
+.border-danger {
+  border: 2px solid #fe142f;
+}
+.border-succes {
+  border: 2px solid #279e7a;
+}

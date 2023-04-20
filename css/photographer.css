@@ -109,7 +109,7 @@ form input {
 
 .photograph-media {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 26rem);
+  grid-template-columns: repeat(auto-fill, 20rem);
   justify-content: space-between;
   margin: 0 100px;
   padding: 2em 0;
@@ -176,14 +176,14 @@ form input {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 25rem;
-  height: 6rem;
+  width: 20rem;
+  height: 4rem;
   padding: 1em;
   background: #db8876;
   color: #000000;
   border-radius: 0.5rem;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .footer-container {
   display: flex;

@@ -36,21 +36,20 @@ function getPhotographerMedias(photographerId, arrayOfPhotographersMedias) {
 
 // Fonction qui affiche les informations d'un photographe
 function displayPhotographerInfos(photographerInfos) {
-  const html = `
-     
-          <article class="photographer-header-item">
-            <div class="photographer-profile">
-              <h1>${photographerInfos.name}</h1>
-              <h3>${photographerInfos.city}, ${photographerInfos.country}</h3>
-                <p>${photographerInfos.tagline}</p>
-            </div>
-          </article>
-          <article class="photographer-header-item">          
-            <button class="contact_button photographer-header-item" onclick="displayModal()">Contactez-moi</button>
-          </article>
-          <article class="photographer-header-item">
-              <img src="assets/photographers/Photographers ID Photos/${photographerInfos.portrait}" alt="${photographerInfos.name}" />
-          </article>
+  const html = `     
+    <article class="photographer-header-item">
+      <div class="photographer-profile">
+        <h1>${photographerInfos.name}</h1>
+        <h3>${photographerInfos.city}, ${photographerInfos.country}</h3>
+          <p>${photographerInfos.tagline}</p>
+      </div>
+    </article>
+    <article class="photographer-header-item">          
+      <button class="contact_button photographer-header-item" onclick="displayModal()">Contactez-moi</button>
+    </article>
+    <article class="photographer-header-item">
+        <img src="assets/photographers/Photographers ID Photos/${photographerInfos.portrait}" alt="${photographerInfos.name}" />
+    </article>
        `;
 
   document.querySelector(".photograph-header").innerHTML = html;
@@ -75,16 +74,11 @@ function displayPhotographerLike() {
   mediaLikeCount.forEach((media) => {
     totalMediaLikeCount += Number(media.textContent);
   });
-  let likeHtml = `
-    
-      <div class="footer-container">
+  let likeHtml = `    
         <span class="footer-likes" id="totalLikesCount">${totalMediaLikeCount}</span>
         <i class="fa-solid fa-heart"></i>
-      </div>
-      <p class="price"></p>
-
     `;
-  document.querySelector(".footer").innerHTML = likeHtml;
+  document.querySelector(".footer-container").innerHTML = likeHtml;
 }
 //Fonction qui affiche le prix d'un photographe
 function displayPhotographerPrice(price) {
@@ -111,7 +105,6 @@ function addEventListeners() {
 function renderLikes() {
   const mediaLikeSpanEl = this.parentNode.firstElementChild;
   const mediaLikeIconEl = this.firstElementChild;
-
   if (mediaLikeIconEl.classList.contains("fa-regular")) {
     let mediaLikeCount = Number(mediaLikeSpanEl.textContent);
     mediaLikeCount++;
@@ -126,3 +119,4 @@ function renderLikes() {
     mediaLikeIconEl.classList.replace("fa-solid", "fa-regular");
   }
 }
+
