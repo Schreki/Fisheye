@@ -1,16 +1,19 @@
 function mediaFactory(media) {
   if (media.image !== undefined) {
-    return createImage(media.image, media.title, media.likes);
+    return createImage(media.image, media.title, media.likes, media.id);
   }
 
-  return createVideo(media.video, media.title, media.likes);
+  return createVideo(media.video, media.title, media.likes, media.id);
 }
 
-function createImage(imgSrc, imgAlt, likes) {
+function createImage(imgSrc, imgAlt, likes, imgId) {
   return `
-  <article class="photograph-media-item">
+  <article class="photograph-media-item" id="${imgId}">
   
-     <img src="assets/medias/${imgSrc}" alt="${imgAlt}"  />
+  <a href= "assets/medias/${imgSrc}" class="imgLightbox">
+     <img src="assets/medias/${imgSrc}" alt="${imgAlt}" >  
+  </a> 
+  
         <section class="media-card-info"> 
             <h2 class="media-card-title">${imgAlt}</h2>
         
@@ -25,13 +28,14 @@ function createImage(imgSrc, imgAlt, likes) {
    `;
 }
 
-function createVideo(videoSrc, videoAlt, videoLikes) {
+function createVideo(videoSrc, videoAlt, videoLikes, videoId) {
   return `
-    <article class="photograph-media-item">
-        
-            <video>
+    <article class="photograph-media-item" id="${videoId}">
+       
+           <video>
                 <source src="assets/medias/${videoSrc}" type="video/mp4" alt="${videoAlt}"></source>
-            </video>
+            </video> 
+  
             <section class="media-card-info"> 
             <h2 class="media-card-title">${videoAlt}</h2>
 
@@ -39,11 +43,9 @@ function createVideo(videoSrc, videoAlt, videoLikes) {
           <span class="media-like-count">${videoLikes}</span>
           <button class="media-like-button" aria-label="Bouton de likes">
             <i class="media-like-logo fa-heart fa-regular"></i>
-          </button>
-          
+          </button>          
         </div>
-        </section>
-        
+        </section>        
     </article>
     
             `;

@@ -119,4 +119,3 @@ function renderLikes() {
     mediaLikeIconEl.classList.replace("fa-solid", "fa-regular");
   }
 }
-

@@ -12,7 +12,7 @@ fetchData("data/photographers.json").then((photographersInfos) => {
     idPhotographe,
     photographersInfos.photographers
   );
-namePhoto(photographerInfos);
+  namePhoto(photographerInfos);
 });
 
 // DOM Elements
@@ -33,7 +33,7 @@ function launchModal() {
 }
 function displayModal() {
   const modal = document.getElementById("contact_modal");
-modal.style.display = "block";
+  modal.style.display = "block";
 }
 
 // CLOSE MODAL FORM
@@ -42,12 +42,10 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-function namePhoto(photographerInfos){
-  const html = ` <h2>${photographerInfos.name}</h2>` ;
-  console.log(html);
+function namePhoto(photographerInfos) {
+  const html = ` <h2>${photographerInfos.name}</h2>`;
   document.querySelector(".namePhoto").innerHTML = html;
 }
-
 
 // Validation Prénom
 function validPrenom() {
@@ -121,11 +119,7 @@ function tousChampsValide() {
 }
 
 function formValide() {
-  if (
-    validPrenom() === true &&
-    validNom() === true &&
-    validEmail() === true 
-  ) {
+  if (validPrenom() === true && validNom() === true && validEmail() === true) {
     return true;
   }
   return false;
@@ -138,11 +132,9 @@ function openRemerciments() {
   validMessage.innerHTML = "Merci pour votre inscription";
 }
 
-
 document.querySelector(".btn-submit").addEventListener("click", (event) => {
   event.preventDefault();
   if (formValide() == true) {
-
     document.querySelector("form").reset();
     closeModal();
   } else {
