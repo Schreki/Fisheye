@@ -138,4 +138,16 @@ class Lightbox {
     return dom;
   }*/
 }
-Lightbox.init();
+//Lightbox.init();
+/** 
+fetchData("data/photographers.json").then((photographersInfos) => {
+  const photographerMedias = getPhotographerMedias(
+    idPhotographe,
+    photographersInfos.media
+  );
+  const photographerInfos = getPhotographerInfos(
+    idPhotographe,
+    photographersInfos.photographers
+  );
+  namePhoto(photographerInfos);
+});*/

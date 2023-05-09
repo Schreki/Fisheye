@@ -25,7 +25,7 @@
   color: #000;
   margin: 10px;
 }
-.namePhoto h2{
+.namePhoto h2 {
   font-size: 50px;
   font-weight: normal;
   color: #000;
@@ -61,7 +61,6 @@ form input {
   border-radius: 5px;
 }
 
-
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -78,7 +77,6 @@ form input {
   background: #3876ac;
 }
 
-
 /* Modal form */
 
 .button {
@@ -89,11 +87,10 @@ form input {
   width: 17rem;
   height: 5rem;
   border: none;
-  background-color: #901C1D;
+  background-color: #901c1d;
   border-radius: 0.5rem;
   cursor: pointer;
 }
-
 
 .smFont {
   font-size: 16px;
@@ -168,14 +165,13 @@ input {
   border: 2px solid #e54858;
 }
 
-
 /* custom select end */
 .text-label {
   font-weight: normal;
   font-size: 16px;
 }
 
-#message input{
+#message input {
   height: 150px;
 }
 
@@ -214,4 +210,36 @@ input {
 }
 .border-succes {
   border: 2px solid #279e7a;
+}
+
+/*Lightbox*/
+.lightbox.show {
+  display: initial;
+}
+.lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background-color: black;
+}
+.lightbox-content img {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: white;
+  font-size: 2em;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }

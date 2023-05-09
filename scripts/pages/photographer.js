@@ -18,6 +18,29 @@ fetchData("data/photographers.json").then((photographersInfos) => {
   displayPhotographerLike();
   displayPhotographerPrice(photographerInfos.price);
   addEventListeners();
+
+  const lightbox = document.querySelector("#lightbox");
+  const close = document.querySelector(".close");
+  const medias = document.querySelectorAll(".photograph-media-item");
+  const lightboxContent = document.querySelector(".lightbox-content");
+
+  // Ajouter l'ecouteur
+  for (let media of medias) {
+    const urlImage = media.querySelector(".imgLightbox img");
+
+    media.addEventListener("click", function (e) {
+      e.preventDefault();
+      lightboxContent.innerHTML = urlImage;
+      console.log((lightboxContent.innerHTML = urlImage));
+      //Afficher la lightbox
+      lightbox.classList.add("show");
+    });
+  }
+
+  //Bouton close
+  close.addEventListener("click", function () {
+    lightbox.classList.remove("show");
+  });
 });
 
 // Fonction qui recupere les informations d'un photographe
