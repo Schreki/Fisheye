@@ -17,7 +17,7 @@ fetchData("data/photographers.json").then((photographersInfos) => {
   displayPhotograherMedias(photographerMedias);
   displayPhotographerLike();
   displayPhotographerPrice(photographerInfos.price);
-  displayLightbox(photographerMedias);
+  displayLightbox();
   addEventListeners();
 });
 
@@ -121,32 +121,24 @@ function renderLikes() {
   }
 }
 
-function displayLightbox(arrayOfMedias) {
+function displayLightbox() {
   const lightbox = document.querySelector("#lightbox");
   const close = document.querySelector(".close");
   const medias = document.querySelectorAll(".photograph-media-item");
 
   // Ajouter l'ecouteur
   for (let media of medias) {
-    //  console.log(media);
-    // const urlImage = media.querySelector(".imgLightbox img");
-    // const lightboxContent = document.querySelector(".lightbox-content");
-
     media.addEventListener("click", function (e) {
       e.preventDefault();
 
+      let lightboxContentHtml = media.outerHTML;
+      // console.log(image);
+      document.querySelector(".lightbox-content").innerHTML =
+        lightboxContentHtml;
       // Afficher la lightbox
       lightbox.classList.add("show");
     });
   }
-  arrayOfMedias.forEach((media) => {
-    console.log(mediaFactory(media));
-    let lightboxContentHtml = `
-     ${mediaFactory(media)}
-    `;
-    document.querySelector(".lightbox-content").innerHTML = lightboxContentHtml;
-  });
-
   //Bouton close
   close.addEventListener("click", function () {
     lightbox.classList.remove("show");
