@@ -8,7 +8,7 @@ function mediaFactory(media) {
 function createImage(imgSrc, imgAlt, likes, imgId) {
   return `
   <article class="photograph-media-item" id="${imgId}">  
-     <img src="assets/medias/${imgSrc}" alt="${imgAlt}" >  
+     <img src="assets/medias/${imgSrc}" alt="${imgAlt}" class="media">  
           <section class="media-card-info"> 
             <h2 class="media-card-title">${imgAlt}</h2>        
         <div class="media-like-container">
@@ -23,13 +23,11 @@ function createImage(imgSrc, imgAlt, likes, imgId) {
 function createVideo(videoSrc, videoAlt, videoLikes, videoId) {
   return `
     <article class="photograph-media-item" id="${videoId}">
-           <video>
+           <video  class="media">
                 <source src="assets/medias/${videoSrc}" type="video/mp4" alt="${videoAlt}"></source>
-            </video> 
-  
+            </video>   
             <section class="media-card-info"> 
             <h2 class="media-card-title">${videoAlt}</h2>
-
             <div class="media-like-container">
           <span class="media-like-count">${videoLikes}</span>
           <button class="media-like-button" aria-label="Bouton de likes">

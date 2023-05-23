@@ -198,3 +198,24 @@ form input {
 .footer-likes {
   margin-right: 0.5em;
 }
+
+.dropdown {
+  background-color: #901c1c;
+  color: white;
+  padding: 0px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  padding: 10px 20px;
+}
+
+.filter {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 25px;
+  align-items: center;
+}

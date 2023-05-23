@@ -12,6 +12,7 @@ fetchData("data/photographers.json").then((photographersInfos) => {
     idPhotographe,
     photographersInfos.photographers
   );
+  createModal();
   namePhoto(photographerInfos);
 });
 
@@ -40,6 +41,94 @@ function displayModal() {
 function closeModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
+}
+
+function createModal() {
+  const htmlModal = `
+  
+  <div class="modal">
+    <div class="bground">
+      <div class="content">
+        <div class="modal-body">
+        <header>
+          <h2>Contactez-moi</h2>
+           <br />
+           <img
+              src="assets/icons/close.svg"
+              onclick="closeModal()"
+              alt=""
+            />
+          </header>
+          <p class="namePhoto"></p>
+          <form
+            id="loginForm"
+            name="reserve"
+            action="index.html"
+            method="get"
+            onsubmit="validate();"
+          >
+          <div class="formData">
+            <label for="first">Prénom</label><br />
+             <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+                minlength="2"
+              />
+              <div id="firstText"></div>
+              <br />
+          </div>
+          <div class="formData">
+            <label for="last">Nom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="last"
+              name="last"
+          />
+            <div id="lastText"></div>
+            <br />
+          </div>
+           <div class="formData">
+            <label for="email">E-mail</label><br />
+            <input
+              class="text-control"
+              type="email"
+              id="email"
+              name="email"
+            />
+            <div id="emailText"></div>
+            <br />
+            </div>
+            <div class="formData">
+              <label for="message">Message :</label><br />
+              <div id="message">
+                <input
+                  class="modal-input modal-msg"
+                  type="text"
+                  id="message"
+                  name="message"
+                  minlength="10"
+                  maxlength="100"
+                  pattern="(?!^ +$)^.+$"
+                  required=""
+                />
+              </div>
+              <br />
+            </div>
+            <input
+              class="btn-submit button"
+              type="submit"
+              value="Envoyer"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+  `;
+  document.querySelector("#contact_modal").innerHTML = htmlModal;
 }
 
 function namePhoto(photographerInfos) {
