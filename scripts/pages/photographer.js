@@ -428,14 +428,10 @@ function switchTri(arrayOfMedias, value) {
  * @returns
  */
 async function triMedias(arrayOfMedias) {
-  console.log("en arrivant dans la fonction trimedia");
-  console.log(arrayOfMedias);
   const selectTri = document.getElementById("dropdownMenu");
   selectTri.addEventListener("input", function () {
     let value = selectTri.value;
-    console.log(value);
     arrayOfMedias = switchTri(arrayOfMedias, value);
-    console.log(switchTri(arrayOfMedias, value));
     displayPhotograherMedias(arrayOfMedias);
   });
   return arrayOfMedias;
