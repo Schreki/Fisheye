@@ -1,6 +1,6 @@
 const url = new URL(document.location);
 const searchParams = url.searchParams;
-idPhotographe = searchParams.get("id");
+const idPhotographe = searchParams.get("id");
 
 fetchData("data/photographers.json").then((photographersInfos) => {
   const photographerInfos = getPhotographerInfos(
@@ -24,8 +24,8 @@ fetchData("data/photographers.json").then((photographersInfos) => {
 
 /**
  * Fonction qui recupere les informations d'un photographe
- * @param {*} photographerId
- * @param {*} arrayOfPhotographers
+ * @param {number} photographerId
+ * @param {Array} arrayOfPhotographers
  * @returns
  */
 function getPhotographerInfos(photographerId, arrayOfPhotographers) {
@@ -36,8 +36,8 @@ function getPhotographerInfos(photographerId, arrayOfPhotographers) {
 
 /**
  * Fonction qui recupere les medias d'un photographe
- * @param {*} photographerId
- * @param {*} arrayOfPhotographersMedias
+ * @param {number} photographerId
+ * @param {Array} arrayOfPhotographersMedias
  * @returns
  */
 function getPhotographerMedias(photographerId, arrayOfPhotographersMedias) {
@@ -48,7 +48,7 @@ function getPhotographerMedias(photographerId, arrayOfPhotographersMedias) {
 
 /**
  * Fonction qui affiche les informations d'un photographe
- * @param {*} photographerInfos
+ * @param {Array} photographerInfos
  */
 function displayPhotographerInfos(photographerInfos) {
   const html = `     
@@ -72,7 +72,7 @@ function displayPhotographerInfos(photographerInfos) {
 
 /**
  * Fonction qui affiche les medias d'un photographe
- * @param {*} arrayOfMedias
+ * @param {Array} arrayOfMedias
  */
 function displayPhotograherMedias(arrayOfMedias) {
   let mediasHTML = "";
@@ -91,7 +91,10 @@ function displayPhotograherMedias(arrayOfMedias) {
  */
 function displayPhotographerLike() {
   const mediaLikeCount = document.querySelectorAll(".media-like-count");
+
+  /* exported totalMediaLikeCount */
   let totalMediaLikeCount = 0;
+  console.log(totalMediaLikeCount);
 
   mediaLikeCount.forEach((media) => {
     totalMediaLikeCount += Number(media.textContent);
@@ -105,7 +108,7 @@ function displayPhotographerLike() {
 
 /**
  * Fonction qui affiche le prix d'un photographe
- * @param {*} price
+ * @param {number} price
  */
 function displayPhotographerPrice(price) {
   const mediaLikeCount = document.querySelectorAll(".media-like-count");
@@ -152,7 +155,7 @@ function renderLikes() {
 
 /**
  *Fonction qui charge la lightbox et affiche l'image
- * @param {*} arrayOfMedias
+ * @param {Array} arrayOfMedias
  */
 function loadLightbox(arrayOfMedias) {
   let images = Array.from(document.getElementsByClassName("media"));
@@ -229,8 +232,9 @@ function loadLightbox(arrayOfMedias) {
       column2.appendChild(lightboxContentHtml);
       column2.appendChild(titre);
       column1.appendChild(backArrow);
-      column3.appendChild(forwardArrow);
       column3.appendChild(icone);
+      column3.appendChild(forwardArrow);
+
       contentVisionneuse.appendChild(column1);
       contentVisionneuse.appendChild(column2);
       contentVisionneuse.appendChild(column3);
@@ -265,7 +269,7 @@ function closeLightbox() {
 
 /**
  * Fonction qui prend le media précédent du tableau (arrayOfMedias) sur la lightbox
- * @param {*} arrayOfMedias
+ * @param {Array} arrayOfMedias
  */
 function beforeMedia(arrayOfMedias) {
   const beforeArrow = document.getElementById("beforeMedia");
@@ -284,8 +288,9 @@ function beforeMedia(arrayOfMedias) {
 }
 
 /**
- * @param {*} arrayOfMedias
- * @param {*} title
+ *
+ * @param {Array} arrayOfMedias
+ * @param {string} title
  */
 function beforeMediaElement(arrayOfMedias, title) {
   let actualValue = arrayOfMedias.indexOf(
@@ -302,7 +307,7 @@ function beforeMediaElement(arrayOfMedias, title) {
 
 /**
  * Fonction qui prend le media suivant du tableau (arrayOfMedias) sur la lightbox
- * @param {*} arrayOfMedias
+ * @param {Array} arrayOfMedias
  */
 function nextMedia(arrayOfMedias) {
   const nextArrow = document.getElementById("nextMedia");
@@ -323,8 +328,8 @@ function nextMedia(arrayOfMedias) {
 
 /**
  *
- * @param {*} arrayOfMedias
- * @param {*} title
+ * @param {Array} arrayOfMedias
+ * @param {string} title
  */
 function nextMediaElement(arrayOfMedias, title) {
   let actualValue = arrayOfMedias.indexOf(
@@ -340,8 +345,8 @@ function nextMediaElement(arrayOfMedias, title) {
 
 /**
  * Fonction qui permet de changer le type de média entre photo et video en navigant dans la lightbox
- * @param {*} arrayOfMedias
- * @param {*} title
+ * @param {Array} arrayOfMedias
+ * @param {string} title
  */
 function changerMedia(arrayOfMedias, title) {
   title.textContent = arrayOfMedias.title;
@@ -395,8 +400,8 @@ function renderDropdown() {
 
 /**
  * Fonction qui renvoie un tableau de media avec les valeurs triées
- * @param {*} arrayOfMedias
- * @param {*} value
+ * @param {Array} arrayOfMedias
+ * @param {string} value
  * @returns
  */
 function switchTri(arrayOfMedias, value) {
@@ -424,7 +429,7 @@ function switchTri(arrayOfMedias, value) {
 
 /**
  * Permet de faire le tri au click sur le select
- * @param {*} arrayOfMedias
+ * @param {Array} arrayOfMedias
  * @returns
  */
 async function triMedias(arrayOfMedias) {

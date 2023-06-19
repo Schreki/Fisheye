@@ -1,4 +1,4 @@
-.modal {
+/*.modal {
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 35px;
+  margin: auto;
+}
+*/
+
+#nextMedia {
   margin: auto;
 }
 
@@ -273,4 +278,64 @@ input {
   margin: 0;
   text-align: left;
   font-size: medium;
+}
+
+/** **/
+#fermeture-modal {
+  background-color: #db8876;
+  border: none;
+}
+.envoi_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#contact_modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.466);
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+@media (min-width: 1024px) {
+  .modal {
+    width: 50% !important;
+  }
+}
+form textarea,
+form input {
+  width: 100%;
+  border: none;
+  font-size: 2em;
+}
+
+.modal {
+  font-size: 0.9em;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  overflow-y: scroll;
+  margin: auto;
 }

@@ -20,7 +20,7 @@
   <body>
     <header>
       <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" alt="logo"
+        <img src="assets/images/logo.png" class="logo" alt="logo Fisheye"
       /></a>
     </header>
     <main id="main">
@@ -30,7 +30,70 @@
         <div class="photograph-media-item"></div>
       </div>
     </main>
-    <div id="contact_modal"></div>
+    <div id="contact_modal" role="dialog" tabindex="0">
+      <div class="modal" role="document">
+        <header>
+          <h2 id="nomPhotographerModal" tabindex="0">Contactez-moi</h2>
+          <p class="namePhoto"></p>
+          <button id="fermeture-modal" tabindex="0">
+            <img
+              src="assets/icons/close.svg"
+              alt="Fermez la modale de contact"
+            />
+          </button>
+        </header>
+        <form id="form-modal">
+          <div>
+            <label for="nameModal" id="nameModalLabel">Prénom</label>
+            <input
+              type="text"
+              tabindex="0"
+              id="nameModal"
+              name="nameModal"
+              aria-labelledby="nameModalLabel"
+            />
+          </div>
+          <div>
+            <label for="lastNameModal" id="lastNameLabel">Nom</label>
+            <input
+              type="text"
+              tabindex="0"
+              id="lastNameModal"
+              name="lastNameModal"
+              aria-labelledby="lastNameLabel"
+            />
+          </div>
+          <div>
+            <label for="email" id="emailLabel">Email</label>
+            <input
+              type="email"
+              tabindex="0"
+              id="email"
+              name="email"
+              aria-labelledby="emailLabel"
+            />
+          </div>
+          <div>
+            <label for="message" id="messageLabel">Votre message</label>
+            <textarea
+              id="message"
+              tabindex="0"
+              name="message"
+              rows="4"
+              cols="50"
+              aria-labelledby="messageLabel"
+            ></textarea>
+          </div>
+          <input
+            type="submit"
+            tabindex="0"
+            class="envoi_button"
+            value="Envoyer"
+            id="buttonSubmit"
+          />
+        </form>
+      </div>
+    </div>
 
     <footer>
       <aside class="footer">
@@ -40,7 +103,6 @@
     </footer>
 
     <!-- Factories -->
-    <!--   <script src="/scripts/utils/lightbox.js"></script>-->
     <script src="scripts/factories/MediasFactory.js"></script>
     <script src="scripts/utils/fetchData.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
