@@ -54,16 +54,16 @@ function displayPhotographerInfos(photographerInfos) {
   const html = `     
     <article class="photographer-header-item">
       <div class="photographer-profile">
-        <h1 id="name">${photographerInfos.name}</h1>
-        <h3>${photographerInfos.city}, ${photographerInfos.country}</h3>
-          <p>${photographerInfos.tagline}</p>
+        <h1 id="name" tabindex="0" aria-label="Nom du photographe : ${photographerInfos.name}">${photographerInfos.name}</h1>
+        <h3 tabindex="0" aria-label = "Ville du photographe : ${photographerInfos.city}">${photographerInfos.city}, ${photographerInfos.country}</h3>
+        <p tabindex="0" aria-label ="Phrase du photographe : ${photographerInfos.tagline}">${photographerInfos.tagline}</p>
       </div>
     </article>
     <article class="photographer-header-item">          
       <button class="contact_button photographer-header-item" onclick="displayModal()">Contactez-moi</button>
     </article>
-    <article class="photographer-header-item">
-        <img src="assets/photographers/Photographers ID Photos/${photographerInfos.portrait}" alt="${photographerInfos.name}" />
+    <article class="photographer-header-item" tabindex="0">
+        <img src="assets/photographers/Photographers ID Photos/${photographerInfos.portrait}" alt="photo de ${photographerInfos.name}" />
     </article>
        `;
 
@@ -84,6 +84,7 @@ function displayPhotograherMedias(arrayOfMedias) {
   });
 
   document.querySelector(".photograph-media").innerHTML = mediasHTML;
+  document.querySelector(".media").setAttribute("tabindex", "0");
 }
 
 /**
@@ -100,7 +101,7 @@ function displayPhotographerLike() {
     totalMediaLikeCount += Number(media.textContent);
   });
   let likeHtml = `    
-        <span class="footer-likes" id="totalLikesCount">${totalMediaLikeCount}</span>
+        <span class="footer-likes" id="totalLikesCount" tabindex="0" aria-label="Nombre total de likes : ${totalMediaLikeCount}">${totalMediaLikeCount}</span>
         <i class="fa-solid fa-heart"></i>
     `;
   document.querySelector(".footer-container").innerHTML = likeHtml;
@@ -117,7 +118,9 @@ function displayPhotographerPrice(price) {
     totalMediaLikeCount += Number(media.textContent);
   });
   let priceHtml = `  
+  <span aria-label="Prix du photographe : ${price} €/ jour" tabindex="0">
     ${price} €/ jour
+  </span>
     `;
   document.querySelector(".price").innerHTML = priceHtml;
 }

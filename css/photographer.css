@@ -207,3 +207,33 @@ form input {
   font-size: 25px;
   align-items: center;
 }
+
+@media (min-width: 300px) and (max-width: 720px) {
+  .photograph-header {
+    margin: 0;
+  }
+
+  .contact_button {
+    top: 85%;
+    height: 50px;
+    width: 180px !important;
+  }
+  .photograph-media-item {
+    width: 20rem;
+  }
+  .photograph-media-item img {
+    width: 20rem;
+  }
+  .photograph-media-item video {
+    width: 20rem;
+  }
+  .photographer-profile {
+    top: 75px;
+  }
+  .photographer-profile p {
+    font-size: 14px;
+  }
+  .photographer-header-item {
+    width: calc(100% / 2);
+  }
+}

@@ -21,11 +21,14 @@ function photographerFactory(data) {
     const h3 = document.createElement("h3");
     h3.textContent = city;
     h3.classList.add("location");
+    h3.setAttribute("tabindex", "0");
     const tag = document.createElement("p");
     tag.classList.add("tagline");
+    tag.setAttribute("tabindex", "0");
     tag.textContent = tagline;
     const prix = document.createElement("p");
     prix.classList.add("price");
+    prix.setAttribute("tabindex", "0");
     prix.textContent = price + "€ /jour";
     article.appendChild(img);
     a.appendChild(img);
